@@ -12,10 +12,21 @@ public class ConsolePrinterDemoApp {
         Thread threadCpB = new Thread(cpB);
 
         threadCpA.start();
-        threadCpB.start();;
+        threadCpB.start();
+
+
+        System.out.println("warten, warten");
+        Thread.sleep(10000);
+        System.out.println("After sleep");
+        cpA.stopRunning();
+        cpB.stopRunning();
+
+        threadCpB.stop();
 
         threadCpA.join();
         threadCpB.join();
+
+
 
     }
 }

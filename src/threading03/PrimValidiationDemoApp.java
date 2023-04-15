@@ -32,6 +32,8 @@ public class PrimValidiationDemoApp {
         th6.start();
         th7.start();
 
+        System.out.println(prim1.toString());
+
         
         th1.join();
         th2.join();
