@@ -1,6 +1,6 @@
 package threading03;
 
-public class PrimValidation {
+public class PrimValidation implements Runnable {
 
     private final long number;
 
@@ -18,7 +18,7 @@ public class PrimValidation {
                 '}';
     }
 
-    public void validate(){
+    private void validate(){
 
         isPrim = true;
 
@@ -32,4 +32,8 @@ public class PrimValidation {
         System.out.println("done: " + number + " is a Prim: " + isPrim);
     }
 
+    @Override
+    public void run() {
+        validate();
+    }
 }

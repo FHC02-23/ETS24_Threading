@@ -13,10 +13,10 @@ public class PrimValidiationDemoApp {
         PrimValidation prim6 = new PrimValidation(1991999993);
         PrimValidation prim7 = new PrimValidation(1991999999);
 
-        prim1.validate();
-        System.out.println(prim1.isPrim);
+        //prim1.validate();
+        //System.out.println(prim1.isPrim);
 
-        /*Thread th1 = new Thread(prim1);
+        Thread th1 = new Thread(prim1);
         Thread th2 = new Thread(prim2);
         Thread th3 = new Thread(prim3);
         Thread th4 = new Thread(prim4);
@@ -48,6 +48,6 @@ public class PrimValidiationDemoApp {
         System.out.println("prim5 = " + prim5);
         System.out.println("prim6 = " + prim6);
         System.out.println("prim7 = " + prim7);
-        */
+
     }
 }
