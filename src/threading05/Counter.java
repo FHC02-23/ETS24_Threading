@@ -1,5 +1,6 @@
 package threading05;
 
+import java.sql.Time;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -15,8 +16,18 @@ public class Counter implements Runnable {
         }
     }
 
-    //private static Lock lock = new ReentrantLock();
+    private static Lock lock = new ReentrantLock();
     private void increase() {
-        Counter++;
+
+        try {
+            if (lock.tryLock(1000, TimeUnit.MILLISECONDS)) {
+                Counter++;
+                lock.unlock();
+
+            }
+
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
