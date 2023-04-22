@@ -20,11 +20,11 @@ public class UrlLoader {
                 }
                 return new WebPage(url, content);
             }
+            // hier kein Exception-Handling. Dieses wird unterhalb "mitgemacht"
         } catch (MalformedURLException e) {
             throw new UrlLoaderException(url, e);
         } catch (IOException e) {
             throw new UrlLoaderException(url, e);
         }
-
     }
 }
