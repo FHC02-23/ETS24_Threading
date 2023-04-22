@@ -24,5 +24,10 @@ public class ThreadingConsoleApp {
         }
         // Zeichen eingelesen
         backgroundWorker.setShouldRun(false);
+        try {
+            th.join();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
