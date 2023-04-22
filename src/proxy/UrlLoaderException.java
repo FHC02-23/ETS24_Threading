@@ -1,8 +1,8 @@
 package proxy;
 
 public class UrlLoaderException extends Exception {
+
     public UrlLoaderException() {
-        super();
     }
 
     public UrlLoaderException(String message) {
@@ -17,7 +17,7 @@ public class UrlLoaderException extends Exception {
         super(cause);
     }
 
-    protected UrlLoaderException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+    public UrlLoaderException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
         super(message, cause, enableSuppression, writableStackTrace);
     }
 }
