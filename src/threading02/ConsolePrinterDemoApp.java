@@ -8,23 +8,13 @@ public class ConsolePrinterDemoApp {
         ConsolePrinter cpA = new ConsolePrinter("A");
         ConsolePrinter cpB = new ConsolePrinter("B");
 
-        Thread threadCpA = new Thread(cpA);
-        Thread threadCpB = new Thread(cpB);
+        Thread th1 = new Thread(cpA);
+        Thread th2 = new Thread(cpB);
 
-        threadCpA.start();
-        threadCpB.start();
+        th1.start();
+        th2.start();
 
-
-        System.out.println("warten, warten");
-        Thread.sleep(10000);
-        System.out.println("After sleep");
-        cpA.stopRunning();
-        cpB.stopRunning();
-
-        threadCpB.stop();
-
-        threadCpA.join();
-        threadCpB.join();
+        System.out.println("all done");
 
 
 
